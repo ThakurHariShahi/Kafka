@@ -1,4 +1,4 @@
-package qainfotech.kafka.runner;
+package qait.kafka.stepDef;
 
 import java.util.Collections;
 import java.util.Properties;
