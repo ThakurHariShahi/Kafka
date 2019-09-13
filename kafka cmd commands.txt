@@ -1,0 +1,25 @@
+	Delete dataDir folrder inside "Zookeeper Home Directory"
+	
+1.Set Up Zookeper:- (In New CMD) 
+        C:\Users\harishahi\Downloads\kafka\exe\zookeeper-3.4.14>.\bin\zkServer.cmd
+	
+	Delete Kafka_logs Folder inside "Kafka Home Directory"
+
+2.Set up Kafka :- (In New CMD)
+        C:\Users\harishahi\Downloads\kafka\exe\kafka_2.11-1.0.2>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+3.Create A new Topic :- 	(In New CMD)
+        C:\Users\harishahi\Downloads\kafka\exe\kafka_2.11-1.0.2>.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+  FeedBack:- 
+ 	Created topic "test".	
+
+4.Creating a Producer       :- 
+	C:\Users\harishahi\Downloads\kafka\exe\kafka_2.11-1.0.2>.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test	
+and Consumer to Test Server :- 	(In New CMD)
+	C:\Users\harishahi\Downloads\kafka\exe\kafka_2.11-1.0.2>.\bin\windows\kafka-console-consumer.bat --zookeeper localhost:2181 --topic test
+
+5.Closing Kafka             :-  (In New CMD)
+	C:\Users\harishahi\Downloads\kafka\exe\kafka_2.11-1.0.2>.\bin\windows\kafka-server-stop.bat
+
+6.Closing Zookeeper         :-  (In New CMD)
+	C:\Users\harishahi\Downloads\kafka\exe\zookeeper-3.4.14>.\bin\zkServer.cmd stop 
